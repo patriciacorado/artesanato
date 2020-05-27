@@ -1,0 +1,9 @@
+E-commere de Artesanato
+
+Páginas
+Perfil de usuário;
+Forma de pagamento;
+Histórico de pedidos;
+Carrinho de compras;
+Detalhes do produto;
+Inicial.

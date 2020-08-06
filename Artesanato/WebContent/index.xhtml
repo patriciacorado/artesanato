@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="template.css" />
+</h:head>
+<body>
+	<div class="box header">
+		<ui:insert name="cabeçalho">
+			<h1>O artesão</h1>
+		</ui:insert>
+	</div>
+
+	<div class="box menu">
+		<br />
+		<ui:insert name="menu">
+				<h:outputText value = "Email"></h:outputText>
+				<h:inputText value ="#{usuarioController.entity.email}"
+					requiredMessage="Este campo não pode ser nulo!"/>
+					
+				<h:outputText value = "Senha"></h:outputText>
+				<h:inputSecret value="#{usuarioController.entity.senha}"
+					requiredMessage="Este campo não pode ser nulo!"></h:inputSecret>
+				
+			<h:form>	
+				<h:commandLink value="Login"
+					action = "#{loginController.logar}"/>
+					
+				<h:commandLink value="Cadastre-se" 
+					action="cadastrousuario.xhtml?faces-redirect=true"/>
+					
+				<h:commandLink value="Carrinho de Compras"
+					action ="carrinho.xhtml?faces-redirect=true"/>
+			</h:form>	
+		</ui:insert>
+	</div>
+
+	<div class="box content">
+		<br />
+		<ui:insert name="conteudo">
+			<div class="box som">
+				<h:selectOneMenu value="Filtro">
+				</h:selectOneMenu>
+			</div>
+		</ui:insert>
+	</div>
+
+	<div class="box footer">
+		<br />
+		<ui:insert name="rodape">
+			<h1>Projeto Final de Tópicos em Programação 1, 06/2020</h1>
+		</ui:insert>
+	</div>
+</body>
+</html>

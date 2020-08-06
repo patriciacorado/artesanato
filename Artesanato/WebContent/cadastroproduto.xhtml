@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="template.css" />
+</h:head>
+<body>
+	<div class="box header">
+		<ui:insert name="cabeçalho">
+			<h1>Cadastro de Produtos</h1>
+		</ui:insert>
+	</div>
+	<div class="box menu">
+		<br />
+		<ui:insert name="menu">
+			<h:panelGrid columns="1">
+				<h:outputText value="Descrição: "></h:outputText>
+				<h:inputText value="#{produtoController.entity.descricao}"></h:inputText>
+				<h:outputText value="Preço: "></h:outputText>
+				<h:inputText value="#{produtoController.entity.preco}"></h:inputText>
+				<h:outputText value = "Insira a categoria do produto:"></h:outputText>
+				<h:selectOneMenu value="#{produtoController.entity.tipoProduto}">
+					<f:selectItems value="#{produtoController.listaProduto}"
+						var="tipo" ItemLabel="tipo.label" />
+				</h:selectOneMenu>
+			</h:panelGrid>
+
+			<h:form>
+				<h:commandButton value="Cadastrar"
+					action="#{produtoController.incluir}">
+				</h:commandButton>
+				<h:commandButton value="Alterar"
+					action="#{produtoController.alterar}">
+				</h:commandButton>
+				<h:commandButton value="Remover"
+					action="#{produtoController.remover}">
+				</h:commandButton>
+			</h:form>
+		</ui:insert>
+	</div>
+</body>
+</html>
